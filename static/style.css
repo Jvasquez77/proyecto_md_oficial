@@ -1,0 +1,146 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; /* Color de fondo más claro y suave */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    min-height: 100vh; /* Establece la altura mínima para cubrir al menos la pantalla completa */
+    width: 100%; /* Asegura que el body ocupe el ancho completo */
+    overflow-x: hidden; /* Oculta el desplazamiento horizontal innecesario */
+    overflow-y: auto; /* Permite desplazamiento vertical si el contenido es más largo que la pantalla */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Proporción ajustada para sidebar y contenido principal */
+    gap: 20px;
+    width: 90%; /* Ancho ajustado para mejor visualización */
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    margin: 20px 0; /* Agrega margen arriba y abajo para no pegarse a los bordes de la ventana */
+    overflow: hidden; /* Asegura que no haya desplazamiento innecesario dentro del contenedor */
+}
+
+.sidebar, .main-content {
+    background-color: #1e293b; /* Color de fondo oscuro */
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #243447; /* Color de fondo un poco más claro que el sidebar */
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    color: #29b6f6; /* Azul más vibrante */
+}
+
+.card p, .card label {
+    color: #b0bec5; /* Texto más claro para mejor legibilidad */
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: calc(100% - 50px);
+    padding: 8px;
+    margin-left: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.button {
+    background-color: #26c6da; /* Azul turquesa para botones */
+    color: #17202A;
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #00acc1; /* Color más oscuro al pasar el ratón */
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f5f5f5; /* Fondo claro para resultados */
+    color: #333;
+    border-radius: 4px;
+}
+/* Estilos Generales para Imágenes */
+img {
+    max-width: 100%; /* Asegura que la imagen no sobrepase el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    display: block; /* Evita espacios extra debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente si es necesario */
+    border-radius: 8px; /* Opcional: añade bordes redondeados a todas las imágenes */
+}
+
+/* Estilos para Imágenes Específicas en Tarjetas */
+.card-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centra la imagen horizontalmente dentro de la tarjeta */
+}
+
+.button-right {
+    position: fixed; /* Posición fija en la pantalla */
+    bottom: 20px; /* 20px desde el borde inferior */
+    right: 20px; /* 20px desde el borde derecho */
+    padding: 10px 20px; /* Espaciado interno para hacer el botón más grande */
+    background-color: #007BFF; /* Color de fondo azul */
+    color: white; /* Texto en color blanco */
+    text-decoration: none; /* Sin subrayado de texto */
+    border-radius: 5px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de mano para indicar que es clickeable */
+    outline: none; /* Elimina el contorno cuando se enfoca */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones para el color de fondo y la sombra */
+}
+
+.button-right:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de elevación */
+}
+
+.button-right:active {
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2); /* Sombra más ajustada para efecto de presión */
+    transform: translateY(2px); /* Ligeramente hacia abajo para simular el efecto de presión */
+}
+
+.button-left {
+    position: fixed; /* Posición fija en la pantalla */
+    bottom: 20px; /* 20px desde el borde inferior */
+    left: 20px; /* 20px desde el borde izquierdo */
+    padding: 10px 20px; /* Espaciado interno para hacer el botón más grande */
+    background-color: #007BFF; /* Color de fondo azul */
+    color: white; /* Texto en color blanco */
+    text-decoration: none; /* Sin subrayado de texto */
+    border-radius: 5px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de mano para indicar que es clickeable */
+    outline: none; /* Elimina el contorno cuando se enfoca */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones para el color de fondo y la sombra */
+}
+
+.button-left:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de elevación */
+}
+
+.button-left:active {
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2); /* Sombra más ajustada para efecto de presión */
+    transform: translateY(2px); /* Ligeramente hacia abajo para simular el efecto de presión */
+}

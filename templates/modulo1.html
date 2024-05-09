@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Leap</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="card">
+                <div class="card">
+                    <img src="../static/images/logo.png" alt="_" class="card-img">
+                </div>
+                <h2>Información Útil</h2>
+                <p>Descubre cómo utilizar esta herramienta para maximizar tus resultados.</p>
+            </div>
+            <div class="card">
+                <img src="../static/images/formula1.png" alt="Formula Recurrencia Lineal" class="card-img">
+                <p>Parámetros: 𝑐 y 𝑑 son constantes, donde 𝑐 afecta la tasa de cambio entre términos y 𝑑 es un término constante que se añade.</p>
+            </div>
+        </div>  
+        <div class="main-content">
+            <div class="card">
+                <h2>Modulo 1: Fundamentos</h2>
+                <h2>Que son las secuencias ?</h2>
+                <p>Piensa en una secuencia como una fila de dominós colocados uno tras otro. Cada ficha representa un número, y cada número sigue al anterior según una regla específica. Por ejemplo, si cada vez duplicamos el número (2, 4, 8, 16...), veremos que es una lista ordenada de números formada según una regla o fórmula específica.</p>
+                <h2>Recurrencias Lineales</h2>
+                <p>Ahora, imagina que decides jugar con esta fila de dominós cambiando la regla. En lugar de duplicar, ahora decides que cada ficha será el resultado de tomar la ficha anterior, multiplicarla por un número fijo (digamos 3), y quizás sumarle algo más (como 5). Eso es básicamente una recurrencia lineal de primer orden: tomas el número anterior, lo multiplicas por algo, y le sumas otro algo.</p>
+                <h2>Probemos Una regresión lineal sencilla</h2>
+                <form id="dataForm" onsubmit="submitData(event)">
+                    <div class="input-group">
+                        <label for="baseInput">Numero Anterior An-1:</label>
+                        <input type="text" id="baseInput" name="baseInput" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="multiplicativeInput">Multiplicador (c):</label>
+                        <input type="text" id="multiplicativeInput" name="multiplicativeInput" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="additiveInput">Sumador (d):</label>
+                        <input type="text" id="additiveInput" name="additiveInput" required>
+                    </div>
+                    <button type="submit" class="button">Enviar</button>
+                </form>
+                <div id="result"></div>
+                <h2>Practiquemos!</h2>
+                <h2>Ejercicio 1: La carrera de las secuencias!</h2>
+                <p>Instrucciones: Te damos el primer término de la secuencia y una regla de recurrencia, tu tarea es calcular los siguientes cuatro términos.</p>
+                <h3>Secuencia A.</h3>
+                <p>Primer término: 2</p>
+                <p>Regla: Multiplica el término anterior por 2</p>
+                <p>Opción 1) 4,8,15,31</p>    
+                <p>Opción 2) 4,8,16,32</p> 
+                <p>Opción 3) 2,4,8,16</p> 
+                <p>Opción 4) 2,5,19,31</p> 
+                <form class="dataForm" onsubmit="procesarPregunta(event)">
+                    <input type="hidden" class="numeroPregunta" name="numeroPregunta" value="1">
+                    <div class="input-group">
+                        <label>Opción seleccionada:</label>
+                        <input type="text" class="opcion" name="opcion" required>
+                    </div>
+                    <button type="submit" class="button">Enviar</button>
+                </form>
+                <div class="resultadoPregunta"></div>
+                <h3>Secuencia B.</h3>
+                <p>Primer término: 3</p>
+                <p>Regla: Multiplica el término anterior por 3 y suma 1</p>
+                <p>Opción 1) 10,40,45,222</p>    
+                <p>Opción 2) 3,10,31,94</p> 
+                <p>Opción 3) 10,31,94,283</p> 
+                <p>Opción 4) 10,30,93,280</p> 
+                <form class="dataForm" onsubmit="procesarPregunta(event)">
+                    <input type="hidden" class="numeroPregunta" name="numeroPregunta" value="2">
+                    <div class="input-group">
+                        <label>Opción seleccionada:</label>
+                        <input type="text" class="opcion" name="opcion" required>
+                    </div>
+                    <button type="submit" class="button">Enviar</button>
+                </form>
+                <div class="resultadoPregunta"></div>
+                <h2>Ejercicio 2: Quien llega Primero ?.</h2>
+                <h3>Instrucciones: Dadas las siguientes secuencias, calcula cual llega primero a un termino mayor que 100</h3>
+                <p>Opción 1) Secuencia C</p>    
+                <p> -Primer termino: 5</p> 
+                <p> -Regla: Multiplica el termino anterior por 2 y suma 10</p> 
+                <p>Opción 2) Secuencia D</p> 
+                <p> -Primer termino: 10</p> 
+                <p> -Regla: Multiplica el termino anterior por 2</p> 
+                <form class="dataForm" onsubmit="procesarPregunta(event)">
+                    <input type="hidden" class="numeroPregunta" name="numeroPregunta" value="3">
+                    <div class="input-group">
+                        <label>Opción seleccionada:</label>
+                        <input type="text" class="opcion" name="opcion" required>
+                    </div>
+                    <button type="submit" class="button">Enviar</button>
+                </form>
+                <div class="resultadoPregunta"></div>
+                <h2>Ejemplo Interactivo de Uso de Secuencias: Crecimiento Poblacional.</h2>
+                <h3>Contexto:</h3>
+                <p>Imagina que estás estudiando una colonia de bacterias que se duplica cada hora. Si comienzas con una sola bacteria, ¿Cómo crecerá la población a lo largo del tiempo bajo condiciones ideales (sin limitaciones de espacio o recursos)?</p>
+                <h4>Secuencia</h4>    
+                <p> -Primer termino: A1 = 1</p> 
+                <p> -Regla de recurrencia: An = 2 * An-1</p> 
+                <h4>Calculo Interactivo</h4>
+                <p>en 1 hora, tendras 2^1 =2 bacterias</p> 
+                <p>en 2 horas, tendras 2^2 =4 bacterias</p>
+                <p>en 3 horas, tendras 2^3 =8 bacterias</p>
+                <h4>Calculando el crecimiento para 24 horas tendrias un total de bacterias:</h4> 
+                <p>Opción 1) 16777216</p>    
+                <p>Opción 2) 8388608</p> 
+                <p>Opción 3) 20971522</p> 
+                <p>Opción 4) 100000000</p> 
+                <form class="dataForm" onsubmit="procesarPregunta(event)">
+                    <input type="hidden" class="numeroPregunta" name="numeroPregunta" value="4">
+                    <div class="input-group">
+                        <label>Opción seleccionada:</label>
+                        <input type="text" class="opcion" name="opcion" required>
+                    </div>
+                    <button type="submit" class="button">Enviar</button>
+                </form>
+                <div class="resultadoPregunta"></div>
+            </div>
+        </div>   
+    </div>
+    <a href="modulo2.html" class="button-right">Siguiente Módulo</a>
+    <script src="../static/script.js"></script>
+</body>
+</html>

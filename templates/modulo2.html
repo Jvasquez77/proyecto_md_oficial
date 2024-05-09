@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Leap</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="card">
+                <div class="card">
+                    <img src="../static/images/logo.png" alt="_" class="card-img">
+                </div>
+                <h2>Información Útil</h2>
+                <p>Descubre cómo utilizar esta herramienta para maximizar tus resultados.</p>
+            </div>
+            <div class="card">
+                <img src="../static/images/homogeneidad.jpg" alt="Interpretacion Grafica" class="card-img">
+                <p>de manera grafica, podriamos interpretar la homogeneidad como una fila de dominos, el equipo homogeneo cumple un patron facilmente predecible, mientras que el equipo no homogeneo, dependientes a crecimientos o decrecimientos adicionales, puede ser mas variable, a nivel grafico comparable a que un obstaculo se presente en el camino de los dominos, cambiando su trayectoria</p>
+            </div>
+        </div>  
+        <div class="main-content">
+            <div class="card">
+                <h2>Modulo 2: Homogeneidad</h2>
+                <h2>Diferencia entre Homogéneas y No Homogéneas </h2>
+                <p>Imagina que tienes dos equipos jugando con estas reglas: </p>
+                <h3>Equipo Homogéneo:</h3>
+                <p>Este equipo decide que es más simple si solo multiplican por un número cada vez, sin sumar nada extra. Así, si empiezan con 2 y siempre multiplican por 3, tendrán 2, 6, 18, 54, etc.</p>
+                <h3>Equipo No Homogéneo:</h3>
+                <p>Este otro equipo piensa en sumar algo extra cada vez que multiplican. Entonces, si también empiezan con 2 y multiplican por 3, pero siempre suman 1, tendrán 2, 7, 22, 67, etc.</p>
+                <p>Por ejemplo, 𝑎𝑛=5𝑎𝑛−1+3an​=5an−1​+3 incluye un crecimiento adicional constante en cada paso.</p>
+                <h1>Practiquemos !</h1>
+                <h2>Ejercicio 1: El detective secuencias</h2>
+                <h3>instrucciones:</h3>
+                <p>te damos los primeros terminos de una secuencia. Identifica si es Homogenea o no Homogenea</p>
+                <h4>Secuencia A: 4, 12, 36, 108, 324</h4>
+                <p>Opcion 1) Homogenea</p>
+                <p>Opcion 2) No Homogenea</p>
+                <form class="dataForm" onsubmit="procesarPregunta(event)">
+                    <input type="hidden" class="numeroPregunta" name="numeroPregunta" value="5">
+                    <div class="input-group">
+                        <label>Opción seleccionada:</label>
+                        <input type="text" class="opcion" name="opcion" required>
+                    </div>
+                    <button type="submit" class="button">Enviar</button>
+                </form>
+                <div class="resultadoPregunta"></div>
+                <h4>Secuencia B: 2, 7, 17, 35, 59</h4>
+                <p>Opcion 1) Homogenea</p>
+                <p>Opcion 2) No Homogenea</p>
+                <form class="dataForm" onsubmit="procesarPregunta(event)">
+                    <input type="hidden" class="numeroPregunta" name="numeroPregunta" value="6">
+                    <div class="input-group">
+                        <label>Opción seleccionada:</label>
+                        <input type="text" class="opcion" name="opcion" required>
+                    </div>
+                    <button type="submit" class="button">Enviar</button>
+                </form>
+                <div class="resultadoPregunta"></div>
+                <h2>Ejemplo Interactivo de uso de secuencias no Homogeneas: </h2>
+                <h3>Amortizacion de un Prestamo</h3>
+                <p><b>Contexto:</b> Considera que has tomado un préstamo de $1000 con un interés simple que se calcula mensualmente al 10%, pero además, decides pagar una cantidad fija de $200 cada mes para reducir el saldo.</p>
+                <b>Secuencia no Homogenea</b>
+                <p>Primer Termino: a1 = 1000 (el saldo inicial del prestamo)</p>
+                <p>Regla: an = an-1 * 1.1 - 200</p>
+                <p>El prestamo crece un 10% cada mes y luego se reduce en 200$ debido al pago mensual</p>
+                <h3>De manera que si calculamos interactivamente</h3>
+                <p>Primer mes: A2 = 1000 * 1.1 - 200 = 900</p>
+                <p>Segundo mes: A3 = 900 * 1.1 - 200 = 790</p>
+                <h4>Actividad: Simulando cuantos meses tardaras en pagar completamente el prestamo y observa como el saldo decrece cada mes</h4>
+                <p>Selecciona la opcion correcta del mes en el que se termina de pagar la deuda</p>
+                <p>Opción 1) mes 9</p>    
+                <p>Opción 2) mes 6</p> 
+                <p>Opción 3) mes 7</p> 
+                <p>Opción 4) mes 8</p> 
+                <form class="dataForm" onsubmit="procesarPregunta(event)">
+                    <input type="hidden" class="numeroPregunta" name="numeroPregunta" value="7">
+                    <div class="input-group">
+                        <label>Opción seleccionada:</label>
+                        <input type="text" class="opcion" name="opcion" required>
+                    </div>
+                    <button type="submit" class="button">Enviar</button>
+                </form>
+                <div class="resultadoPregunta"></div>
+            </div>
+        </div>   
+    </div>
+<!-- Botón para ir al módulo anterior -->
+<a href="modulo1.html" class="button-left">Módulo Anterior</a>
+
+<!-- Botón para ir al módulo siguiente -->
+<a href="modulo3.html" class="button-right">Siguiente Módulo</a>
+    <script src="../static/script.js"></script>
+</body>
+</html>
